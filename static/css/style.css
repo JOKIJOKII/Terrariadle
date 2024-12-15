@@ -1,0 +1,77 @@
+body {
+
+    font-family: 'Roboto', sans-serif;
+    background: url('https://c.wallhere.com/photos/2e/84/pixel_art_landscape_Terraria-2301230.jpg!d') no-repeat center center fixed;
+    background-size: cover;
+
+}
+
+h3 {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+#item-list div {
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.7);
+    margin: 10px auto;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+#item-list img {
+    margin-top: 5px;
+    max-width: 10px;
+    height: auto;
+}
+
+.guesses li {
+    background-color: #2d3748; /* Cor cinza escura */
+    padding: 8px;
+    border-radius: 8px;
+    transition: transform 0.2s;
+}
+
+.guesses li:hover {
+    transform: scale(1.05);
+}
+
+.guesses img {
+    width: 150px; 
+    height: 150px;
+    object-fit: cover; 
+}
+
+.correct {
+    color: green;
+}
+
+.incorrect {
+    color: red;
+}
+
+.detail-box {
+    background-color: #444;
+    padding: 10px;
+    border-radius: 5px;
+    width: 100px;
+    text-align: center;
+}
+
+.detail-box strong {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.flex {
+    display: flex;
+}
+
+.space-x-4 {
+    gap: 1rem;
+}
+
+.mt-2 {
+    margin-top: 8px;
+}
+

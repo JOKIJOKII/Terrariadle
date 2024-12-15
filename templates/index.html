@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Terradle</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    
+</head>
+<body class="text-white flex flex-col items-center justify-center min-h-screen bg-black bg-opacity-50">
+    <div class="text-center">
+        <img alt="Terradle logo" class="mx-auto mb-4" height="280" src="https://terraria.wiki.gg/images/9/99/Site-logo-overworld.png" width="400"/>
+        
+        <div class="flex justify-center space-x-4 mb-4">
+            <i class="fas fa-question-circle text-2xl"></i>
+            <i class="fas fa-fire text-2xl"></i>
+            <i class="fas fa-user-circle text-2xl"></i>
+            <i class="fas fa-smile text-2xl"></i>
+            <i class="fas fa-bars text-2xl"></i>
+        </div>
+
+        <div class="bg-gray-800 bg-opacity-75 p-4 rounded-lg mb-4">
+            <p class="mb-2">ADVINHE O CRAFT DE HOJE!!</p>
+            <form action="/search_item" method="post">
+                <input class="w-full p-2 rounded-lg text-black mb-2" placeholder="Digite o nome do item ..." type="text" name="item_name" list="sword-list" id="item-input"/>
+                <datalist id="sword-list">
+                    <option value="Wooden Sword">
+                    <option value="Copper Shortsword">
+                    <option value="Tin Shortsword">
+                    <option value="Iron Shortsword">
+                    <option value="Lead Shortsword">
+                    <option value="Silver Shortsword">
+                    <option value="Tungsten Shortsword">
+                    <option value="Gold Shortsword">
+                    <option value="Platinum Shortsword">
+                    <option value="Night's Edge">
+                    <option value="Excalibur">
+                    <option value="True Excalibur">
+                    <option value="Terra Blade">
+                    <option value="Meowmere">
+                    <option value="Starfury">
+                    <option value="Seedler">
+                    <option value="Enchanted Sword">
+                    <option value="Bee Keeper">
+                    <option value="Breaker Blade">
+                    <option value="Star Wrath">
+                    <option value="Influx Waver">
+                    <option value="Keybrand">
+                    <option value="Blade of Grass">
+                    <option value="Fiery Greatsword">
+                    <option value="Blood Butcherer">
+                    <option value="Deathbringer Pickaxe">
+                    <option value="Molten Pickaxe">
+                    <option value="Cobalt Sword">
+                    <option value="Palladium Sword">
+                    <option value="Mythril Sword">
+                    <option value="Orichalcum Sword">
+                    <option value="Adamantite Sword">
+                    <option value="Titanium Sword">
+                    <option value="Chlorophyte Saber">
+                    <option value="True Night's Edge">
+                    <option value="Fetid Baghnakhs">
+                    <option value="Flying Knife">
+                    <option value="Light Disc">
+                    <option value="Gungnir">
+                    <option value="Tonbogiri">
+                    <option value="The Rotted Fork">
+                    <option value="Dark Lance">
+                    <option value="Obsidian Swordfish">
+                    <option value="Spear">
+                    <option value="Trident">
+                    <option value="Storm Spear">
+                    <option value="Adamantite Glaive">
+                </datalist>
+
+                <button class="bg-yellow-500 text-black px-4 py-2 rounded-lg">
+                    <i class="fas fa-arrow-right"></i>
+                </button>
+            </form>
+        </div>
+
+        <!-- Lista de itens encontrados -->
+        <div id="item-list" class="mt-4 text-center">
+            <h3 class="text-lg font-bold mb-2">Itens Descobertos:</h3>
+            <ul id="guesses" class="space-y-2"></ul>
+        </div>
+        <div id="result"></div>
+
+
+        <p class="mb-4">0 pessoas já descobriram!</p>
+
+        <p class="mb-4"><span class="item-name text-green-500"></span></p>
+
+
+        <!-- Exibindo o resultado da pesquisa -->
+        <!-- {% if item_image_url %}
+            <div class="bg-gray-800 bg-opacity-75 p-4 rounded-lg mt-4">
+                <h3 class="text-xl">{{ item_name }} - Item Encontrado</h3>
+                <img src="{{ item_image_url }}" alt="{{ item_name }} Image" class="w-full h-auto mt-2" height="1000px" width="1000px">
+                <p>{{ item_info }}</p>
+            </div>
+        {% else %}
+            <p class="text-red-500">Item não encontrado. Tente novamente!</p>
+        {% endif %} -->
+
+        <div class="bg-gray-800 bg-opacity-75 p-4 rounded-lg mb-4">
+            <p class="mb-2">Quer mais?</p>
+            <p class="mb-2">Joga os nossos outros jogos:</p>
+            <div class="flex justify-center space-x-4">
+                <img alt="Pokédle logo" class="rounded-full" height="50" src="https://static-00.iconduck.com/assets.00/minecraft-icon-2048x2048-3ifq7gy7.png" width="50"/>
+                <img alt="Dotadle logo" class="rounded-full" height="50" src="https://img.icons8.com/dusk/512/terraria.png" width="50"/>
+                <img alt="Smashidle logo" class="rounded-full" height="50" src="https://cmsassets.rgpub.io/sanity/images/dsfx7636/news_live/286b63bfd6b975dfe4b0a3faa2db74edf73579b9-1024x1024.jpg" width="50"/>
+                <img alt="OnePiecedle logo" class="rounded-full" height="50" src="https://cdn.icon-icons.com/icons2/2596/PNG/512/game_icon_155348.png" width="50"/>
+                <img alt="Narutodle logo" class="rounded-full" height="50" src="https://i.redd.it/uxo4uoldmpva1.jpg" width="50"/>
+            </div>
+        </div>
+
+        <div class="flex justify-center space-x-4 mb-4">
+            <i class="fab fa-twitter text-2xl"></i>
+            <i class="fab fa-instagram text-2xl"></i>
+            <i class="fab fa-patreon text-2xl"></i>
+        </div>
+
+        <div class="flex justify-center space-x-4 mb-4">
+            <i class="fab fa-apple text-2xl"></i>
+            <i class="fab fa-google-play text-2xl"></i>
+        </div>
+
+        <p class="mb-4">terradle.net—2024</p>
+        <p class="text-sm">Política de privacidade</p>
+
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    
+</body>
+</html>
